@@ -127,7 +127,7 @@ cat ~/monitor.log
 
 Screenshot / log output (kèm trong ./screenshots/).
 
-Link demo (nếu có).
+Link demo: https://github.com/kewti102/Devops-intern-Ha-Thi-Kim-Oanh/tree/main/phase-1/week-1/day-2-linux-advanced
 
 ## 4. Khó khăn & cách giải quyết
 
