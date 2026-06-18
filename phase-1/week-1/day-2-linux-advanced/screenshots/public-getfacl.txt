@@ -1,0 +1,10 @@
+# file: tmp/shared-lab/public.txt
+# owner: oanh
+# group: devops
+user::rw-
+user:reviewer:r--
+group::rwx
+group:devops:rwx
+mask::rwx
+other::---
+

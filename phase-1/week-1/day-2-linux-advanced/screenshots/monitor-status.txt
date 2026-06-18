@@ -1,0 +1,21 @@
+● monitor.service - Day 2 Linux Advanced Monitor Service
+     Loaded: loaded (/etc/systemd/system/monitor.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2026-06-18 14:55:23 +07; 30s ago
+   Main PID: 102099 (bash)
+      Tasks: 2 (limit: 4548)
+     Memory: 904.0K
+        CPU: 80ms
+     CGroup: /system.slice/monitor.service
+             ├─102099 bash /home/oanh/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-1/day-2-linux-advanced/monitor.sh
+             └─102138 sleep 10
+
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102125]:   99139   98997 antigravity      4.5  4.6
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102125]:    1650    1489 gnome-shell      4.2 10.1
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102099]: ------------------------------------------------------------
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102099]: [2026-06-18 14:55:53] CPU: 4.03% | MEM: 31.30%
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102099]: Top 3 CPU processes:
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:     PID    PPID COMMAND         %CPU %MEM
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:   99056   98994 antigravity      4.7  3.3
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:   99139   98997 antigravity      4.5  4.6
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:    1650    1489 gnome-shell      4.2 10.1
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102099]: ------------------------------------------------------------

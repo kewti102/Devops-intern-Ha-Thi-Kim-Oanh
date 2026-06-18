@@ -1,0 +1,25 @@
+มิ.ย. 18 14:55:23 oanh-virtual-machine systemd[1]: Started Day 2 Linux Advanced Monitor Service.
+มิ.ย. 18 14:55:23 oanh-virtual-machine monitor.sh[102099]: Monitor started at 2026-06-18 14:55:23
+มิ.ย. 18 14:55:23 oanh-virtual-machine monitor.sh[102099]: Interval: 10s
+มิ.ย. 18 14:55:23 oanh-virtual-machine monitor.sh[102099]: Log file: /home/oanh/monitor.log
+มิ.ย. 18 14:55:33 oanh-virtual-machine monitor.sh[102099]: [2026-06-18 14:55:33] CPU: 2.77% | MEM: 31.32%
+มิ.ย. 18 14:55:33 oanh-virtual-machine monitor.sh[102099]: Top 3 CPU processes:
+มิ.ย. 18 14:55:33 oanh-virtual-machine monitor.sh[102112]:     PID    PPID COMMAND         %CPU %MEM
+มิ.ย. 18 14:55:33 oanh-virtual-machine monitor.sh[102112]:   99056   98994 antigravity      4.7  3.3
+มิ.ย. 18 14:55:33 oanh-virtual-machine monitor.sh[102112]:   99139   98997 antigravity      4.5  4.6
+มิ.ย. 18 14:55:33 oanh-virtual-machine monitor.sh[102112]:    1650    1489 gnome-shell      4.2 10.1
+มิ.ย. 18 14:55:33 oanh-virtual-machine monitor.sh[102099]: ------------------------------------------------------------
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102099]: [2026-06-18 14:55:43] CPU: 3.78% | MEM: 31.31%
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102099]: Top 3 CPU processes:
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102125]:     PID    PPID COMMAND         %CPU %MEM
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102125]:   99056   98994 antigravity      4.7  3.3
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102125]:   99139   98997 antigravity      4.5  4.6
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102125]:    1650    1489 gnome-shell      4.2 10.1
+มิ.ย. 18 14:55:43 oanh-virtual-machine monitor.sh[102099]: ------------------------------------------------------------
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102099]: [2026-06-18 14:55:53] CPU: 4.03% | MEM: 31.30%
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102099]: Top 3 CPU processes:
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:     PID    PPID COMMAND         %CPU %MEM
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:   99056   98994 antigravity      4.7  3.3
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:   99139   98997 antigravity      4.5  4.6
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102136]:    1650    1489 gnome-shell      4.2 10.1
+มิ.ย. 18 14:55:53 oanh-virtual-machine monitor.sh[102099]: ------------------------------------------------------------

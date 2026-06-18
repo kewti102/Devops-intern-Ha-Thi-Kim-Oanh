@@ -1,0 +1,6 @@
+[2026-06-18 14:56:43] WARNING: CPU usage above 80% for 3 consecutive samples. Current CPU=100.00%
+[2026-06-18 14:58:03] WARNING: CPU usage above 80% for 3 consecutive samples. Current CPU=100.00%
+[2026-06-18 15:00:24] WARNING: CPU usage above 80% for 3 consecutive samples. Current CPU=100.00%
+[2026-06-18 15:00:34] WARNING: CPU usage above 80% for 4 consecutive samples. Current CPU=100.00%
+[2026-06-18 15:00:44] WARNING: CPU usage above 80% for 5 consecutive samples. Current CPU=100.00%
+[2026-06-18 15:00:54] WARNING: CPU usage above 80% for 6 consecutive samples. Current CPU=100.00%

@@ -1,0 +1,11 @@
+● webapp.service - Demo web app
+     Loaded: loaded (/etc/systemd/system/webapp.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2026-06-18 14:17:11 +07; 4min 44s ago
+   Main PID: 101273 (python3)
+      Tasks: 1 (limit: 4548)
+     Memory: 8.5M
+        CPU: 93ms
+     CGroup: /system.slice/webapp.service
+             └─101273 /usr/bin/python3 -m http.server 8080
+
+มิ.ย. 18 14:17:11 oanh-virtual-machine systemd[1]: Started Demo web app.
