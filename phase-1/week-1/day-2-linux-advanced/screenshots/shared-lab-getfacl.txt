@@ -1,0 +1,16 @@
+# file: tmp/shared-lab
+# owner: root
+# group: devops
+# flags: -s-
+user::rwx
+user:reviewer:r-x
+group::rwx
+group:devops:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:devops:rwx
+default:mask::rwx
+default:other::---
+

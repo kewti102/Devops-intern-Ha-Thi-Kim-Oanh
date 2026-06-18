@@ -1,0 +1,7 @@
+มิ.ย. 18 14:13:25 oanh-virtual-machine systemd[1]: Started Demo web app.
+มิ.ย. 18 14:14:44 oanh-virtual-machine python3[101234]: 127.0.0.1 - - [18/Jun/2026 14:14:44] "GET / HTTP/1.1" 200 -
+มิ.ย. 18 14:17:08 oanh-virtual-machine systemd[1]: webapp.service: Main process exited, code=killed, status=9/KILL
+มิ.ย. 18 14:17:08 oanh-virtual-machine systemd[1]: webapp.service: Failed with result 'signal'.
+มิ.ย. 18 14:17:11 oanh-virtual-machine systemd[1]: webapp.service: Scheduled restart job, restart counter is at 1.
+มิ.ย. 18 14:17:11 oanh-virtual-machine systemd[1]: Stopped Demo web app.
+มิ.ย. 18 14:17:11 oanh-virtual-machine systemd[1]: Started Demo web app.

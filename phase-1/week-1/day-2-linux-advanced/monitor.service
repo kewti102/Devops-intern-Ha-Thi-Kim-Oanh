@@ -1,0 +1,16 @@
+[Unit]
+Description=Day 2 Linux Advanced Monitor Service
+After=network.target
+
+[Service]
+Type=simple
+User=oanh
+WorkingDirectory=/home/oanh/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-1/day-2-linux-advanced
+Environment=INTERVAL=10
+Environment=LOG_FILE=/home/oanh/monitor.log
+ExecStart=/home/oanh/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-1/day-2-linux-advanced/monitor.sh
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
