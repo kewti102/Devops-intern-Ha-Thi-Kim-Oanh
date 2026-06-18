@@ -137,11 +137,12 @@ Link demo (nếu có).
 
 ## 5. Reference
 
-Đã đọc gì để làm task này (link cụ thể, không vague).
+- Perplexity
+- Chatgpt
 
 ## 6. Self-check
 
-✅ systemd service webapp chạy được, auto-restart sau khi kill.
-✅ ACL trên /tmp/shared-lab đúng yêu cầu (kèm output getfacl).
-✅ monitor.sh log đúng khi stress test.
-✅ Trả lời được 5 câu Part A đúng ý.
+* ✅ systemd service webapp chạy được, auto-restart sau khi kill.
+* ✅ ACL trên /tmp/shared-lab đúng yêu cầu (kèm output getfacl).
+* ✅ monitor.sh log đúng khi stress test.
+* ✅ Trả lời được 5 câu Part A đúng ý.
