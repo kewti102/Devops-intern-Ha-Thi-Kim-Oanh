@@ -3,9 +3,9 @@
 Task: Day 2 — Linux Advanced: Process, systemd, Permission, Networking
 Intern: Hà Thị Kim Oanh
 Phase / Week / Day: Phase 1 / Week 1 / Day 2
-Branch: phase-1/week-1/day-2-linux-advanced
+Branch: `phase-1/week-1/day-2-linux-advanced`
 Submitted at: 2026-06-18 17:00 (timezone +07)
-Time spent: 5 hours.
+Time spent: 5 hours
 
 ## 1. Mục tiêu
 
