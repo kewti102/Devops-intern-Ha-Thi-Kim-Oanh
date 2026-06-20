@@ -1,0 +1,31 @@
+git bisect start
+
+# bad: [ed404a8] commit 20
+
+git bisect bad
+
+# good: [6e39c2e] commit 1
+
+git bisect good 6e39c2e
+
+# good: [d5f6b7d] commit 10
+
+git bisect good d5f6b7d
+
+# bad: [2792dc6] commit 15
+
+git bisect bad 2792dc6
+
+# good: [0594b6f] commit 12
+
+git bisect good 0594b6f
+
+# bad: [90f9406] commit 14
+
+git bisect bad 90f9406
+
+# bad: [fedeccd] commit 13
+
+git bisect bad fedeccd
+
+# first bad commit: [fedeccd] commit 13
