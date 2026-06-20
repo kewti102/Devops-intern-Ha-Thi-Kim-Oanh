@@ -5,7 +5,7 @@
 * Phase / Week / Day: Phase 1 / Week 1 / Day 3
 * Branch: phase-1/week-1/day-3-git
 * Submitted at: 2026-06-20
-* Time spent: ...
+* Time spent: 5h
 
 ## 1. Mục tiêu
 
