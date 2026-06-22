@@ -1,4 +1,10 @@
 # Day 4 — Networking Essentials
+* Task: Day 4 — Networking Essentials
+* Intern: Hà Thị Kim Oanh
+* Phase / Week / Day: Phase 1 / Week 1 / Day 4
+* Branch: phase-1/week-1/day-4-Networking-essentials
+* Submitted at: 2026-06-22
+* Time spent: 8h.
 
 ## Mục tiêu
 
