@@ -1,85 +1,105 @@
-1. So sanh giua mo hinh TCP/IP va mo hinh OSI:
-Mo hinh OSI gom 7 tang do la: Tang Ung Dung - Tang trinh dien-Tang phien - Tang giao van - Tang Mang - Tang lien ket du lieu - Tang Vat ly
-Mo hinh TCP/IP gom 4 tang do la: Tang ung dung-Tang giao van-Tang Mang-Tang truy cap mang
+**1. So sánh giữa mô hình TCP/IP và mô hình OSI:**
 
-Mo hinh TCP/IP duoc to chuc thanh 4 tang, moi tang nhan mot nhom cac nhiem vu cu the va lam viec voi cac tang khac. Ta se so sanh qua nhiem vu moi tang.
-- Network Access Layer-Tang truy cap mang: Tuong ung voi hai tang Physical Layer va Data Link Layer trong mo hinh OSI, tang Network Access Layer trong mo hinh TCP/IP dam bao viec gui va nhan du lieu tren phuong tien vat ly cua mang. Tang nay xu ly tat ca van de lien quan toi viec du lieu duoc truyen tu thiet bi nay sang thiet bi khac. Bao gom viec dong goi du lieu thanh khung(frame), xac dinh dia chi vat ly, va kiem soat quyen truy cap vao moi truong truyen dan. 
-- Network/Internet Layer-Tang mang: Tang mang co trach nhiem chinh trong viec dinh tuyen cac goi tin tu nguon den dich. Tang nay su dung giao thuc IP de xac dinh dia chi duy nhat cho moi thiet bi va quyet dinh duong di cua du lieu trong mang. Tang mang dam nhan viec phan manh va tai to hop cac goi tin, xu ly loi va cap nhat cac thong tin dinh tuyen.
-- Transport Layer-Tang giao van: Tang giao van chiu trach nhiem cho viec truyen du lieu dang tin cay giua cac ung dung chay tren cac thiet bi khac nhau. No dam bao du lieu duoc truyen mot cach chinh xac, khong bi loi va theo thu tu dung. 
-Tang giao van thuc hien kiem soat loi, kiem soat luong du lieu va cung cap cac co che truyen thong dac biet nhu TCP(UDP).
-- Application Layer-Tang ung dung: tang ung dung trong mo hinh TCP/IP cung cap cac dich vu mang can thiet cho cac ung dung ma nguoi dung su dung, nhu trinh duyet web, email va cac dich vu truyen file. 
-Tang ung dung cung cap cac giao thuc ung dung nhu HTTP, SMTP, FTP,..., dam bao nguoi dung co the tuong tac voi mang mot cach suon se va hieu qua. 
+Mô hình OSI gồm 7 tầng đó là: Tầng Ứng Dụng - Tầng Trình Diễn - Tầng Phiên - Tầng Giao Vận - Tầng Mạng - Tầng Liên Kết Dữ Liệu - Tầng Vật Lý.
 
-Su giong nhau: Mo hinh OSI va TCP/IP co mot so diem chung nhu sau: deu co phan lop, deu co lop network va transport, cung su dung ky thuat chuyen packet.
+Mô hình TCP/IP gồm 4 tầng đó là: Tầng Ứng Dụng - Tầng Giao Vận - Tầng Mạng - Tầng Truy Cập Mạng.
 
-Su khac nhau:
-- Phuong phap tiep can: 
-	- OSI: tiep can theo chieu doc
-	- TCP/IP tiep can theo chieu ngang
-- Thiet ke: 
-	- OSI: Phat trien mo hinh truoc sau do se phat trien giao thuc
-	- TCP/IP: Cac giao thuc duoc thiet ke truoc sau do phat trien mo hinh sau
-- Truyen thong: 
-	- OSI: Lop Transport chi xac dinh huong ket noi	
-	- TCP/IP: Ho tro ca ket noi TCP va UDP
+Mô hình TCP/IP được tổ chức thành 4 tầng, mỗi tầng nhận một nhóm các nhiệm vụ cụ thể và làm việc với các tầng khác. Ta sẽ so sánh qua nhiệm vụ mỗi tầng.
 
-- Do tin cay va pho bien:
-	- OSI: Nhieu nguoi cho rang day chi la mo hinh cu, chi de tham khao, so nguoi su dung con han che hon so voi TCP/IP.
-	- TCP/IP: Duoc chuan hoa, nhieu nguoi tin cay va su dung pho bien tren toan cau.
-2. TCP 3-way Handshake
+Network Access Layer - Tầng truy cập mạng: Tương ứng với hai tầng Physical Layer và Data Link Layer trong mô hình OSI, tầng Network Access Layer trong mô hình TCP/IP đảm bảo việc gửi và nhận dữ liệu trên phương tiện vật lý của mạng. Tầng này xử lý tất cả vấn đề liên quan tới việc dữ liệu được truyền từ thiết bị này sang thiết bị khác. Bao gồm việc đóng gói dữ liệu thành khung (frame), xác định địa chỉ vật lý, và kiểm soát quyền truy cập vào môi trường truyền dẫn.
+Network/Internet Layer - Tầng mạng: Tầng mạng có trách nhiệm chính trong việc định tuyến các gói tin từ nguồn đến đích. Tầng này sử dụng giao thức IP để xác định địa chỉ duy nhất cho mỗi thiết bị và quyết định đường đi của dữ liệu trong mạng. Tầng mạng đảm nhận việc phân mảnh và tái tổ hợp các gói tin, xử lý lỗi và cập nhật các thông tin định tuyến.
+Transport Layer - Tầng giao vận: Tầng giao vận chịu trách nhiệm cho việc truyền dữ liệu đáng tin cậy giữa các ứng dụng chạy trên các thiết bị khác nhau. Nó đảm bảo dữ liệu được truyền một cách chính xác, không bị lỗi và theo thứ tự đúng.
 
+Tầng giao vận thực hiện kiểm soát lỗi, kiểm soát luồng dữ liệu và cung cấp các cơ chế truyền thông đặc biệt như TCP (UDP).
+
+Application Layer - Tầng ứng dụng: Tầng ứng dụng trong mô hình TCP/IP cung cấp các dịch vụ mạng cần thiết cho các ứng dụng mà người dùng sử dụng, như trình duyệt web, email và các dịch vụ truyền file.
+
+Tầng ứng dụng cung cấp các giao thức ứng dụng như HTTP, SMTP, FTP,..., đảm bảo người dùng có thể tương tác với mạng một cách suôn sẻ và hiệu quả.
+
+Sự giống nhau: Mô hình OSI và TCP/IP có một số điểm chung như sau: đều có phân lớp, đều có lớp Network và Transport, cùng sử dụng kỹ thuật chuyển packet.
+
+Sự khác nhau:
+
+Phương pháp tiếp cận:
+OSI: tiếp cận theo chiều dọc.
+TCP/IP: tiếp cận theo chiều ngang.
+Thiết kế:
+OSI: Phát triển mô hình trước sau đó sẽ phát triển giao thức.
+TCP/IP: Các giao thức được thiết kế trước sau đó phát triển mô hình sau.
+Truyền thông:
+OSI: Lớp Transport chỉ xác định hướng kết nối.
+TCP/IP: Hỗ trợ cả kết nối TCP và UDP.
+Độ tin cậy và phổ biến:
+OSI: Nhiều người cho rằng đây chỉ là mô hình cũ, chỉ để tham khảo, số người sử dụng còn hạn chế hơn so với TCP/IP.
+TCP/IP: Được chuẩn hóa, nhiều người tin cậy và sử dụng phổ biến trên toàn cầu.
+**2. TCP 3-way Handshake**
 client             Server
- SYN      --------> 		(client yeu cau ket noi)
-          <--------  SYN-ACK 	(Dong y, gui lai so Sequence Number cua Server)
- ACK      -------->  		(Client xac nhan, ket noi ESTABLISHED)
+
+SYN      -------->         (client yêu cầu kết nối)
+
+          <--------  SYN-ACK     (Đồng ý, gửi lại số Sequence Number của Server)
+
+ACK      -------->         (Client xác nhận, kết nối ESTABLISHED)
 
 Explain:
-flag SYN: yeu cau ket noi
-flag ACK: Xac nhan 
-flag FIN: dong ket noi binh thuong
-flag RST: reset ket noi ngay lap tuc
 
-3. Khi nao chon UDP thay TCP? Vi du thuc te.
-- UDP la giao thuc lop van chuyen cua giao thuc Internet (IP) cung cap kha do phu hop coi cac ung dung thoi gian thuc va nhay cam ve thoi gian nhu truyen phat video, DNS va VoIP. 
-- UDP duoc gui di thay cho TCP khi khong can ben server xac thuc 3 buoc, can phan hoi nhanh, do tre thap, streaming lien tuc, co the chap nhan viec mat mot vai goi tin (khong can truyn lai)
-vi du: Game online thoi gian thuc, goij Video/VoIP, livestream, truy van DNS. 
+flag SYN: yêu cầu kết nối.
 
-4. CIDR: 
+flag ACK: Xác nhận.
+
+flag FIN: đóng kết nối bình thường.
+
+flag RST: reset kết nối ngay lập tức.
+
+**3. Khi nào chọn UDP thay TCP? Ví dụ thực tế.**
+UDP là giao thức lớp vận chuyển của giao thức Internet (IP) cung cấp khả năng phù hợp với các ứng dụng thời gian thực và nhạy cảm về thời gian như truyền phát video, DNS và VoIP.
+UDP được gửi đi thay cho TCP khi không cần bên server xác thực 3 bước, cần phản hồi nhanh, độ trễ thấp, streaming liên tục, có thể chấp nhận việc mất một vài gói tin (không cần truyền lại).
+
+Ví dụ: Game online thời gian thực, gọi Video/VoIP, livestream, truy vấn DNS.
+
+**4. CIDR:**
+
 /24 - 256 IP
+
 /16 - 65536 IP
+
 /22 - 1024 IP
 
-5. Tai sao co private IP range?
-private Ip dung trong mang noi bo de tiet kiem IPv4 cong cong.
+**5. Tại sao có private IP range?**
 
-6. NAT la gi? Phan biet SNAT vs DNAT.
-NAT la Network Address Translation-tuc la dich dia chi mang. NAT cho phep chuyen doi dia chi IP rieng thanh dia chi IP cong cong va nguoc lai.
-Chuc nang chinh:
-- Tiet kiem IP cong cong: Giam thieu tinh trang khan hien IPv4 bang cach cho phep nhieu thiet bi chia se mot dia chi IP cong cong.
-- Che dau IP ben trong LAN: an dia chi mang noi bo khoi mang ben ngoai.
-- Dich dia chi IP: Chuyen tu Private Ip sang Public IP truoc khi ra goi Internet.
-- Quan ly truy cap: Loc goi tin, cho phep/cam truy cap den port cu the.
+Private IP dùng trong mạng nội bộ để tiết kiệm IPv4 công cộng.
 
-SNAT va DNAT la 2 trong 3 loai NAT pho bien trong he thong mang. Trong do:
-- SNAT-Static NAT-NAT tinh:
-	- anh xa 1-1(mot private IP -> mot public IP co dinh)
-	- co che gan cung/private IP luon map voi public IP tuong ung
-	- Ung dung: NAT server(web server, email server can truy cap Internet tu ben ngoai) 
-	- Uu diem: Che giau IP nguon, giam nguy co tan cong mang
-	- Nhuoc diem: Ton kem-can so luong public Ip tuong ung voi so thiet bi
-- DNAT-Dynamic NAT-NAT dong: 
-	- anh xa 1-n(mot private Ip -> public IP tu pool/group)
-	- co che: tao bang anh xa dong tu private IP sang public IP trong pool
-	- Ung dung: Khi nhieu user trong mang can truy cap ra Internet
-	- Uu diem: Quan ly linh dong, khong can gan cung
-	- Nhuoc diem: Van ton kem vi can nhieu public IP de tao pool
-7. Su khac nhau giua Forward Proxy va Reverse Proxy
+**6. NAT là gì? Phân biệt SNAT vs DNAT.**
 
-Proxies dong vai tro quan trong trong quan ly luong du lieu may khach va may chu. 
+NAT là Network Address Translation - tức là dịch địa chỉ mạng. NAT cho phép chuyển đổi địa chỉ IP riêng thành địa chỉ IP công cộng và ngược lại.
 
-- Forward Proxy : hoat dong thay mat client de nang cao quyen rieng tu va kiem soat quyen truy cap
-- Reverse Proxy: hoat dong thay mat server de toi uu hoa hieu suat va bao mat.
+Chức năng chính:
 
-- Forward Proxy: duoc trien khai truoc client(trong mang noi bo), muc dich an danh client, kiem soat truy cap; Bao ve client khi ra Internet, configure proxy do client viet, cache o client side, ung dung trong mang doanh nghiep, hoc duong
-- Reverse Proxy: duoc trien khai truoc server(truoc backend server), muc dich bao ve server, load balancing, toi uu hieu suat; bao mat bao ve backend server khoi tan cong, client khong biet co proxy, ho tro phan phoi tai, cache server responses de giam tai, he thong web voi nhieu backend server.
+Tiết kiệm IP công cộng: Giảm thiểu tình trạng khan hiếm IPv4 bằng cách cho phép nhiều thiết bị chia sẻ một địa chỉ IP công cộng.
+Che dấu IP bên trong LAN: Ẩn địa chỉ mạng nội bộ khỏi mạng bên ngoài.
+Dịch địa chỉ IP: Chuyển từ Private IP sang Public IP trước khi ra Internet.
+Quản lý truy cập: Lọc gói tin, cho phép/cấm truy cập đến port cụ thể.
+
+SNAT và DNAT là 2 trong 3 loại NAT phổ biến trong hệ thống mạng. Trong đó:
+
+SNAT - Static NAT - NAT tĩnh:
+Ánh xạ 1-1 (một private IP -> một public IP cố định).
+Cơ chế gán cứng, private IP luôn map với public IP tương ứng.
+Ứng dụng: NAT server (web server, email server cần truy cập Internet từ bên ngoài).
+Ưu điểm: Che giấu IP nguồn, giảm nguy cơ tấn công mạng.
+Nhược điểm: Tốn kém - cần số lượng public IP tương ứng với số thiết bị.
+DNAT - Dynamic NAT - NAT động:
+Ánh xạ 1-n (một private IP -> public IP từ pool/group).
+Cơ chế: tạo bảng ánh xạ động từ private IP sang public IP trong pool.
+Ứng dụng: Khi nhiều user trong mạng cần truy cập ra Internet.
+Ưu điểm: Quản lý linh động, không cần gán cứng.
+Nhược điểm: Vẫn tốn kém vì cần nhiều public IP để tạo pool.
+**7. Sự khác nhau giữa Forward Proxy và Reverse Proxy**
+
+Proxies đóng vai trò quan trọng trong quản lý luồng dữ liệu máy khách và máy chủ.
+
+Forward Proxy: hoạt động thay mặt client để nâng cao quyền riêng tư và kiểm soát quyền truy cập.
+Reverse Proxy: hoạt động thay mặt server để tối ưu hóa hiệu suất và bảo mật.
+Forward Proxy: được triển khai trước client (trong mạng nội bộ), mục đích ẩn danh client, kiểm soát truy cập; bảo vệ client khi ra Internet, cấu hình proxy do client viết, cache ở client side, ứng dụng trong mạng doanh nghiệp, học đường.
+Reverse Proxy: được triển khai trước server (trước backend server), mục đích bảo vệ server, load balancing, tối ưu hiệu suất; bảo mật bảo vệ backend server khỏi tấn công, client không biết có proxy, hỗ trợ phân phối tải, cache server responses để giảm tải, hệ thống web với nhiều backend server.
 
