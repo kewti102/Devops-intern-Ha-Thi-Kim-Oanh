@@ -1,0 +1,11 @@
+{
+  "name": "day-6-cicd-basics",
+  "version": "1.0.0",
+  "description": "Demo app for CI/CD basics",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "lint": "node --check app/server.js",
+    "test": "node --test"
+  }
+}
