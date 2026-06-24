@@ -1,5 +1,6 @@
 
-## 1. Docker Image được tạo từ nhiều layer (lớp) chỉ đọc (read-only). Mỗi lệnh trong Dockerfile như `FROM`, `RUN`, `COPY`, `ADD` sẽ tạo ra một layer mới.
+## 1. 
+Docker Image được tạo từ nhiều layer (lớp) chỉ đọc (read-only). Mỗi lệnh trong Dockerfile như `FROM`, `RUN`, `COPY`, `ADD` sẽ tạo ra một layer mới.
 Các layer sẽ lần lượt tương ứng với:
 
 * Base image (node:20-alpine)
