@@ -92,3 +92,17 @@ jobs:
    	 format: table
     	 exit-code: 1
     	 severity: HIGH,CRITICAL
+    	 
+    	 - name: Install Syft
+      uses: anchore/sbom-action/download-syft@v0
+
+    - name: Generate SBOM
+      run: |
+        syft ghcr.io/${{ github.repository_owner }}/demo-app:latest \
+        -o spdx-json=sbom.json
+
+    - name: Upload SBOM
+      uses: actions/upload-artifact@v4
+      with:
+        name: sbom
+        path: sbom.json
