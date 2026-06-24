@@ -1,6 +1,7 @@
+## 1. Image gồm những lớp gì? Vì sao layer được cache?
 
-## 1. 
 Docker Image được tạo từ nhiều layer (lớp) chỉ đọc (read-only). Mỗi lệnh trong Dockerfile như `FROM`, `RUN`, `COPY`, `ADD` sẽ tạo ra một layer mới.
+
 Các layer sẽ lần lượt tương ứng với:
 
 * Base image (node:20-alpine)
@@ -10,55 +11,73 @@ Các layer sẽ lần lượt tương ứng với:
 * Copy source code
 * Cấu hình lệnh chạy container (CMD)
 
-## 2. Su khac nhau giua copy va add
-Ca copy va add deu dung de dua file tu host vao Docker imagine.
+Layer được cache vì Docker sẽ lưu kết quả của từng layer sau mỗi lần build. Nếu một layer không thay đổi thì Docker sẽ tái sử dụng layer đó thay vì thực thi lại, giúp tăng tốc độ build và tiết kiệm tài nguyên.
 
-### Copy
+## 2. Sự khác nhau giữa COPY và ADD
 
-- Chi sao chep file hoac thu muc tu host vao imagine
-- chuc nang don gian, de hieu
-- duoc khuyen nghi su dung trong hau het truong hop
+Cả `COPY` và `ADD` đều dùng để đưa file từ host vào Docker image.
 
-### add
+### COPY
 
-ngoai chuc nang cua copy, add con co the:
-- tu dong giai nen file nen cuc bo (.tar, .tar.gz, ...)
-- tai file tu URL (khong khuyen khich su dung)
+- Chỉ sao chép file hoặc thư mục từ host vào image.
+- Chức năng đơn giản, dễ hiểu.
+- Được khuyến nghị sử dụng trong hầu hết trường hợp.
 
-## 3. CMD vs ENTRYPOINT - khi nao dung cai nao?
+### ADD
 
-### CMD 
-CMD dung de chi dinh lenh mac dinh se chay khi container khoi dong
+Ngoài chức năng của `COPY`, `ADD` còn có thể:
 
-Dac diem:
-- co the bi ghi de hoan toan khi chay `docker run`.
-- thuong dung de cung cap tham so hoac lenh mac dinh
+- Tự động giải nén file nén cục bộ (`.tar`, `.tar.gz`, ...).
+- Tải file từ URL (không khuyến khích sử dụng).
+
+## 3. CMD vs ENTRYPOINT – khi nào dùng cái nào?
+
+### CMD
+
+CMD dùng để chỉ định lệnh mặc định sẽ chạy khi container khởi động.
+
+Đặc điểm:
+
+- Có thể bị ghi đè hoàn toàn khi chạy `docker run`.
+- Thường dùng để cung cấp tham số hoặc lệnh mặc định.
 
 ### ENTRYPOINT
 
-entrypoint dung de chi dinh chuong trinh chinh cua container.
+ENTRYPOINT dùng để chỉ định chương trình chính của container.
 
-Dac diem:
-- kho bi ghi de hon
-- moi tham so truyen vao docker run se duoc noi them vao sau entrypoint
-- thuong dung khi container hoat dong nhu mot executable
+Đặc điểm:
 
-## 4. Tai sao nen co `.dockerignore`
-File `.dockerignore` dung de loai tru cac file hoac thu muc khong can thiet khoi Docker build context.
-Loi ich: chung giup build nhanh hon, giam dung luong imagine, tranh dua cac file nhay cam vao imagine, giam so lan Docker phai rebuild cac layer khi cac file khong lien quan thay doi
+- Khó bị ghi đè hơn.
+- Mọi tham số truyền vào `docker run` sẽ được nối thêm vào sau ENTRYPOINT.
+- Thường dùng khi container hoạt động như một executable.
 
-## 5. EXPOSE thuc su lam gi? co tu mo port khong?
-`EXPOSE` dung de khai bao (document) rang container se lang nghe tren mot cong cu the.
+## 4. Tại sao nên có `.dockerignore`?
 
-EXPOSE khong tu mo port ra ngoai host.
+File `.dockerignore` dùng để loại trừ các file hoặc thư mục không cần thiết khỏi Docker build context.
 
-## 6. Tai sao khong nen chay container as root?
+Lợi ích:
 
-Khong nen chay container bang tai khoan root vi ly do bao mat
-Neu ung dung trong container bi khai thac lo hong, ke tan cong co quyen root ben trong container va gay anh huong den host hoac cac container khac.
+- Giúp build nhanh hơn.
+- Giảm dung lượng image.
+- Tránh đưa các file nhạy cảm vào image.
+- Giảm số lần Docker phải rebuild các layer khi các file không liên quan thay đổi.
 
-Rui ro khi chay root:
-- tang kha nang leo thang dac quyen (privilege escalation)
-- co the truy cap hoac sua doi tai nguyen ngoai y muon
-- vi pham nguyen tac "Least privilege" (cap quyen toi thieu can thiet).
+## 5. EXPOSE thực sự làm gì? Có tự mở port không?
 
+`EXPOSE` dùng để khai báo (documentation) rằng container sẽ lắng nghe trên một cổng cụ thể.
+
+EXPOSE không tự mở port ra ngoài host.
+Để truy cập được từ bên ngoài vẫn cần public port
+`docker run -p 3000:3000 demo-app`
+
+### 6. Tại sao không nên chạy container as root?
+
+Không nên chạy container bằng tài khoản root vì lý do bảo mật.
+
+Nếu ứng dụng trong container bị khai thác lỗ hổng, kẻ tấn công có quyền root bên trong container và có thể gây ảnh hưởng đến host hoặc các container khác.
+
+Rủi ro khi chạy bằng root:
+
+* Tăng khả năng leo thang đặc quyền (privilege escalation).
+* Có thể truy cập hoặc sửa đổi tài nguyên ngoài ý muốn.
+* Vi phạm nguyên tắc "Least Privilege" (cấp quyền tối thiểu cần thiết).
