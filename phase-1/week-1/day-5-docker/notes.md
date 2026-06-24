@@ -2,12 +2,12 @@
 ## 1. Docker Image được tạo từ nhiều layer (lớp) chỉ đọc (read-only). Mỗi lệnh trong Dockerfile như `FROM`, `RUN`, `COPY`, `ADD` sẽ tạo ra một layer mới.
 Các layer sẽ lần lượt tương ứng với:
 
-Base image (node:20-alpine)
-Tạo thư mục làm việc (WORKDIR)
-Copy file package.json
-Cài đặt dependency (npm install)
-Copy source code
-Cấu hình lệnh chạy container (CMD)
+* Base image (node:20-alpine)
+* Tạo thư mục làm việc (WORKDIR)
+* Copy file package.json
+* Cài đặt dependency (npm install)
+* Copy source code
+* Cấu hình lệnh chạy container (CMD)
 
 ## 2. Su khac nhau giua copy va add
 Ca copy va add deu dung de dua file tu host vao Docker imagine.
