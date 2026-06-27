@@ -4,7 +4,7 @@
 * **Phase / Week / Day**: Phase 1 / Week 2 / Day 6
 * **Branch**: `main`
 * **Submitted at**: `2026-06-27 23:59` (GMT+7)
-* **Time spent**: `6 giờ`
+* **Time spent**: `10 giờ`
 
 ---
 
