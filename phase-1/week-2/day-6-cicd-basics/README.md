@@ -41,12 +41,6 @@ npm ci
 npm run lint
 ```
 
-Kết quả mong đợi:
-
-```text
-Không có lỗi ESLint.
-```
-
 ---
 
 ## 2.4 Chạy Unit Test
@@ -54,13 +48,6 @@ Không có lỗi ESLint.
 ```bash
 npm test
 ```
-
-Kết quả mong đợi:
-
-```text
-Tất cả test đều PASS.
-```
-
 ---
 
 ## 2.5 Build Docker Image
@@ -110,13 +97,6 @@ Kết quả mẫu:
 ```bash
 docker exec -it demo-app whoami
 ```
-
-Kết quả mong đợi:
-
-```text
-node
-```
-
 ---
 
 ## 2.8 Push source lên GitHub
