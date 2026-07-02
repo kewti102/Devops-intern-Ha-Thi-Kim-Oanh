@@ -6,7 +6,11 @@
 * **Time spent**: 10 giờ
 ---
 # 1. Mục tiêu
-Xây dựng CI/CD pipeline nâng cao với GitHub Actions, bao gồm Reusable Workflow, Docker Build & Push lên GitHub Container Registry (GHCR), quét bảo mật bằng Trivy, sinh Software Bill of Materials (SBOM), triển khai nhiều môi trường (Staging/Production), Matrix Strategy và Release tự động.
+Xây dựng CI/CD pipeline nâng cao với GitHub Actions bao gồm:
+* Reusable Workflow, Docker Build & Push lên GitHub Container Registry (GHCR)
+* quét bảo mật bằng Trivy, sinh Software Bill of Materials (SBOM)
+* triển khai nhiều môi trường (Staging/Production)
+* Matrix Strategy và Release tự động.
 # 2. Cách chạy
 ## Part A: Sửa code trong ci.yml để tạo matrix test: chỉ sửa phần test
 ```
