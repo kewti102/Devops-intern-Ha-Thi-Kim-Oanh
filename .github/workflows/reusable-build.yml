@@ -55,7 +55,7 @@ jobs:
         with:
           context: ./phase-1/week-2/day-7-cicd-advanced
           file: ./phase-1/week-2/day-7-cicd-advanced/Dockerfile
-          push: false
+          push: true
           tags: |
             ghcr.io/${{ steps.owner.outputs.value }}/${{ inputs.image_name }}:sha-${{ steps.vars.outputs.short_sha }}
             ghcr.io/${{ steps.owner.outputs.value }}/${{ inputs.image_name }}:${{ inputs.image_tag }}

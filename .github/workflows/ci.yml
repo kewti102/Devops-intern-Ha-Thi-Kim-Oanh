@@ -84,7 +84,7 @@ jobs:
         with:
           image-ref: ghcr.io/${{ needs.build-image.outputs.owner }}/demo-app:sha-${{ needs.build-image.outputs.short_sha }}
           format: table
-          exit-code: 0
+          exit-code: 
           severity: HIGH,CRITICAL
           
   generate-sbom:
