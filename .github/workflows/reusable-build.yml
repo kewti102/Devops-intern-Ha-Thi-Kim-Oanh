@@ -53,7 +53,8 @@ jobs:
       - name: Build & Push Docker Image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./phase-1/week-2/day-7-cicd-advanced
+          file: ./phase-1/week-2/day-7-cicd-advanced/Dockerfile
           push: true
           tags: |
             ghcr.io/${{ steps.owner.outputs.value }}/${{ inputs.image_name }}:sha-${{ steps.vars.outputs.short_sha }}
