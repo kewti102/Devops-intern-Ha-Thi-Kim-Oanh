@@ -10,25 +10,25 @@ Xây dựng CI/CD pipeline nâng cao với GitHub Actions, bao gồm Reusable Wo
 # 2. Cách chạy
 ## Part A: Sửa code trong ci.yml để tạo matrix test: chỉ sửa phần test
 ```
-* test:
-  * name: Test
-    * strategy:
-    * fail-fast: false
-    * matrix:
-     * node: [18,20,22]
-      * os:
-        * - ubuntu-22.04
-        * - ubuntu-24.04
-      * exclude:
-        * - node: 18
-          * os: ubuntu-24.04
-  * runs-on: ${{ matrix.os }}
-  * steps:
-    * - uses: actions/checkout@v4
+test:
+  name: Test
+    strategy:
+    fail-fast: false
+    matrix:
+     node: [18,20,22]
+      os:
+        - ubuntu-22.04
+        - ubuntu-24.04
+      exclude:
+        - node: 18
+          os: ubuntu-24.04
+  runs-on: ${{ matrix.os }}
+  steps:
+    - uses: actions/checkout@v4
 
-    * - uses: actions/setup-node@v4
-      * with:
-        * node-version: ${{ matrix.node }}
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node }}
 ```
 ## Part B: 
 Tách 1 file .github/workflows/reusable-build.yml nhận input image_name + image_tag  -> kết quả ở file reusable-build.yml
