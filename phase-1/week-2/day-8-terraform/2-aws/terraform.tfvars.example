@@ -1,0 +1,4 @@
+region = "ap-southeast-1"
+owner  = "oanh"
+my_ip  = "118.68.5.0/32"
+key_name = ""

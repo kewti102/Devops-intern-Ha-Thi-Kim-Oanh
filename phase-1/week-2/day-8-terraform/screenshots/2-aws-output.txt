@@ -1,0 +1,3 @@
+instance_id = "i-0956c0336ff1ac3dc"
+public_ip = "52.74.254.131"
+url = "http://52.74.254.131"

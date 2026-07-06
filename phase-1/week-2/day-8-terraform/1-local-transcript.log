@@ -1,0 +1,151 @@
+===== terraform init =====
+[0m[1mInitializing provider plugins found in the configuration...[0m
+- Reusing previous version of hashicorp/local from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/local v2.9.0
+- Using previously-installed hashicorp/random v3.9.0
+
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins found in the state...[0m
+- Reusing previous version of hashicorp/local
+- Reusing previous version of hashicorp/random
+- Using previously-installed hashicorp/local v2.9.0
+- Using previously-installed hashicorp/random v3.9.0
+
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+===== terraform fmt =====
+main.tf
+===== terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+===== terraform plan length = 2 =====
+[0m[1mrandom_pet.name: Refreshing state... [id=cleanly-harmless-bunny][0m
+[0m[1mlocal_file.hello: Refreshing state... [id=3dff071132e603e9b2a8ccd51f93f89eab59653e][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+===== terraform apply length = 2 =====
+[0m[1mrandom_pet.name: Refreshing state... [id=cleanly-harmless-bunny][0m
+[0m[1mlocal_file.hello: Refreshing state... [id=3dff071132e603e9b2a8ccd51f93f89eab59653e][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+[0m[1m[32m
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+[0mfile_path = "./out/hello-cleanly-harmless-bunny.txt"
+===== terraform output =====
+file_path = "./out/hello-cleanly-harmless-bunny.txt"
+===== check generated file =====
+total 12
+drwxrwxr-x 2 oanh oanh 4096 ก.ค.   6 14:38 .
+drwxrwxr-x 4 oanh oanh 4096 ก.ค.   6 15:36 ..
+-rwxrwxr-x 1 oanh oanh   45 ก.ค.   6 14:38 hello-cleanly-harmless-bunny.txt
+Hello from terraform, cleanly-harmless-bunny!===== change length 2 to 3 =====
+terraform {
+  required_version = ">= 1.6"
+  required_providers {
+    random = { source = "hashicorp/random", version = "~> 3.6" }
+    local  = { source = "hashicorp/local", version = "~> 2.5" }
+  }
+}
+
+resource "random_pet" "name" {
+  length = 3
+}
+
+resource "local_file" "hello" {
+  filename = "${path.module}/out/hello-${random_pet.name.id}.txt"
+  content  = "Hello from terraform, ${random_pet.name.id}!"
+}
+
+output "file_path" {
+  value = local_file.hello.filename
+}
+===== terraform plan length = 3 =====
+[0m[1mrandom_pet.name: Refreshing state... [id=cleanly-harmless-bunny][0m
+[0m[1mlocal_file.hello: Refreshing state... [id=3dff071132e603e9b2a8ccd51f93f89eab59653e][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+===== terraform apply length = 3 =====
+[0m[1mrandom_pet.name: Refreshing state... [id=cleanly-harmless-bunny][0m
+[0m[1mlocal_file.hello: Refreshing state... [id=3dff071132e603e9b2a8ccd51f93f89eab59653e][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+[0m[1m[32m
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+[0mfile_path = "./out/hello-cleanly-harmless-bunny.txt"
+===== terraform output after length = 3 =====
+file_path = "./out/hello-cleanly-harmless-bunny.txt"
+===== check generated file after length = 3 =====
+total 12
+drwxrwxr-x 2 oanh oanh 4096 ก.ค.   6 14:38 .
+drwxrwxr-x 4 oanh oanh 4096 ก.ค.   6 15:36 ..
+-rwxrwxr-x 1 oanh oanh   45 ก.ค.   6 14:38 hello-cleanly-harmless-bunny.txt
+Hello from terraform, cleanly-harmless-bunny!===== terraform destroy =====
+[0m[1mrandom_pet.name: Refreshing state... [id=cleanly-harmless-bunny][0m
+[0m[1mlocal_file.hello: Refreshing state... [id=3dff071132e603e9b2a8ccd51f93f89eab59653e][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # local_file.hello[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "local_file" "hello" {
+      [31m-[0m[0m content              = "Hello from terraform, cleanly-harmless-bunny!" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha256 = "pFBRvfvb5U0t2lvdfNSCWY3HV3AjAzjOTWcaRSbIziE=" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha512 = "wrAa3DC2dREvlaGIkNHVekboCwiTMKHfcL3udyQLGrp/3hWAPd0RsnSdZHmbsgectXbgmrUm6w6x72Qlyj4M8w==" [90m-> null[0m[0m
+      [31m-[0m[0m content_md5          = "cd5a0a2e36102a2108ee4c5034929d31" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha1         = "3dff071132e603e9b2a8ccd51f93f89eab59653e" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha256       = "a45051bdfbdbe54d2dda5bdd7cd482598dc75770230338ce4d671a4526c8ce21" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha512       = "c2b01adc30b675112f95a18890d1d57a46e80b089330a1df70bdee77240b1aba7fde15803ddd11b2749d64799bb2079cb576e09ab526eb0eb1ef6425ca3e0cf3" [90m-> null[0m[0m
+      [31m-[0m[0m directory_permission = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m file_permission      = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m filename             = "./out/hello-cleanly-harmless-bunny.txt" [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "3dff071132e603e9b2a8ccd51f93f89eab59653e" [90m-> null[0m[0m
+    }
+
+[1m  # random_pet.name[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "random_pet" "name" {
+      [31m-[0m[0m id        = "cleanly-harmless-bunny" [90m-> null[0m[0m
+      [31m-[0m[0m length    = 3 [90m-> null[0m[0m
+      [31m-[0m[0m separator = "-" [90m-> null[0m[0m
+    }
+
+[1mPlan:[0m [0m0 to add, 0 to change, 2 to destroy.
+
+Changes to Outputs:
+  [31m-[0m[0m file_path = "./out/hello-cleanly-harmless-bunny.txt" [90m-> null[0m[0m
+[0m[1mlocal_file.hello: Destroying... [id=3dff071132e603e9b2a8ccd51f93f89eab59653e][0m[0m
+[0m[1mlocal_file.hello: Destruction complete after 0s[0m
+[0m[1mrandom_pet.name: Destroying... [id=cleanly-harmless-bunny][0m[0m
+[0m[1mrandom_pet.name: Destruction complete after 0s[0m
+[0m[1m[32m
+Destroy complete! Resources: 2 destroyed.[0m

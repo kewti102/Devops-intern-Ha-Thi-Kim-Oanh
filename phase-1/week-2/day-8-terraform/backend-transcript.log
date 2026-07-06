@@ -1,0 +1,1124 @@
+Script started on 2026-07-06 16:10:38+07:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="32"]
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ ta[Kerraform init
+[?2004l[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1m[0mTerraform encountered problems during initialisation, including problems
+[31m│[0m [0mwith the configuration, described below.
+[31m│[0m [0m
+[31m│[0m [0mThe Terraform configuration must be valid before initialization so that
+[31m│[0m [0mTerraform can determine which modules and providers need to be installed.[0m[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate required providers configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 4, in terraform:
+[31m│[0m [0m   4:   [4mrequired_providers[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA module may have only one required providers configuration. The required
+[31m│[0m [0mproviders were previously configured at main.tf:4,3-21.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate provider configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 16:
+[31m│[0m [0m  16: [4mprovider "aws"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA default (non-aliased) provider configuration for "aws" was already given at
+[31m│[0m [0mmain.tf:16,1-15. If multiple configurations are required, set the "alias"
+[31m│[0m [0margument for alternative configurations.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate resource "random_id" configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 27:
+[31m│[0m [0m  27: [4mresource "random_id" "suffix"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA random_id resource named "suffix" was already declared at main.tf:27,1-30.
+[31m│[0m [0mResource names must be unique per type in each module.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate resource "aws_s3_bucket" configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 31:
+[31m│[0m [0m  31: [4mresource "aws_s3_bucket" "tfstate"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA aws_s3_bucket resource named "tfstate" was already declared at
+[31m│[0m [0mmain.tf:31,1-35. Resource names must be unique per type in each module.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate resource "aws_s3_bucket_versioning" configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 36:
+[31m│[0m [0m  36: [4mresource "aws_s3_bucket_versioning" "tfstate"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA aws_s3_bucket_versioning resource named "tfstate" was already declared at
+[31m│[0m [0mmain.tf:36,1-46. Resource names must be unique per type in each module.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate resource "aws_s3_bucket_server_side_encryption_configuration" configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 44:
+[31m│[0m [0m  44: [4mresource "aws_s3_bucket_server_side_encryption_configuration" "tfstate"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA aws_s3_bucket_server_side_encryption_configuration resource named "tfstate"
+[31m│[0m [0mwas already declared at main.tf:44,1-72. Resource names must be unique per
+[31m│[0m [0mtype in each module.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate resource "aws_s3_bucket_public_access_block" configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 54:
+[31m│[0m [0m  54: [4mresource "aws_s3_bucket_public_access_block" "tfstate"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA aws_s3_bucket_public_access_block resource named "tfstate" was already
+[31m│[0m [0mdeclared at main.tf:54,1-55. Resource names must be unique per type in each
+[31m│[0m [0mmodule.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate resource "aws_dynamodb_table" configuration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variable.tf line 63:
+[31m│[0m [0m  63: [4mresource "aws_dynamodb_table" "tf_lock"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA aws_dynamodb_table resource named "tf_lock" was already declared at
+[31m│[0m [0mmain.tf:63,1-40. Resource names must be unique per type in each module.
+[31m╵[0m[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mls -la[27mls -la
+[?2004ltotal 20
+drwxrwxr-x 2 oanh oanh 4096 ก.ค.   6 16:10 [0m[01;34m.[0m
+drwxrwxr-x 6 oanh oanh 4096 ก.ค.   6 16:10 [01;34m..[0m
+-rw-rw-r-- 1 oanh oanh 1332 ก.ค.   6 16:09 main.tf
+-rw-rw-r-- 1 oanh oanh  209 ก.ค.   6 16:10 outputs.tf
+-rw-rw-r-- 1 oanh oanh 1332 ก.ค.   6 16:10 variable.tf
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mrm -f variable.tf[27mrm -f variable.tf
+[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mcat > variables.tf <<'EOF'[27m
+[7mvariable "region" {[27m
+[7m  type    = string[27m
+[7m  default = "ap-southeast-1"[27m
+[7m}[27m
+
+[7mvariable "owner" {[27m
+[7m  type    = string[27m
+[7m  default = "trongnamnguyen"[27m
+[7m}[27m
+
+[7mvariable "owner_slug" {[27m
+[7m  type    = string[27m
+[7m  default = "trongnam"[27m
+[7m}[27m
+[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat > variables.tf <<'EOF'
+variable "region" {
+  type    = string
+  default = "ap-southeast-1"
+}
+
+variable "owner" {
+  type    = string
+  default = "trongnamnguyen"
+}
+
+variable "owner_slug" {
+  type    = string
+  default = "trongnam"
+}
+EOF
+[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ nano variable.tf
+[?2004l[?2004h[?1049h[22;0;0t[1;32r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[30;35H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 6.2                       variable.tf                                [1;79H(B[m[31d(B[0;7m^G(B[m Help[14G(B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut[53G(B[0;7m^T(B[m Execute   (B[0;7m^C(B[m Location[32d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste     (B[0;7m^J(B[m Justify   (B[0;7m^/(B[m Go To Line[2d[?12l[?25h[?25l[30d[J[32d[?12l[?25h[32;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mgrep -R 'terraform {' -n .[27m
+[7mgrep -R 'provider "aws"' -n .[27m
+[7mgrep -R 'resource "random_id"' -n .[27m
+[7mgrep -R 'resource "aws_s3_bucket"' -n .[27m[A[A[Agrep -R 'terraform {' -n .
+grep -R 'provider "aws"' -n .
+grep -R 'resource "random_id"' -n .
+grep -R 'resource "aws_s3_bucket"' -n .
+[?2004l[35m[K./main.tf[m[K[36m[K:[m[K[32m[K1[m[K[36m[K:[m[K[01;31m[Kterraform {[m[K
+[35m[K./main.tf[m[K[36m[K:[m[K[32m[K16[m[K[36m[K:[m[K[01;31m[Kprovider "aws"[m[K {
+[35m[K./main.tf[m[K[36m[K:[m[K[32m[K27[m[K[36m[K:[m[K[01;31m[Kresource "random_id"[m[K "suffix" {
+[35m[K./main.tf[m[K[36m[K:[m[K[32m[K31[m[K[36m[K:[m[K[01;31m[Kresource "aws_s3_bucket"[m[K "tfstate" {
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ ta[Kerraform init
+[?2004l[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1m[0mTerraform encountered problems during initialisation, including problems
+[31m│[0m [0mwith the configuration, described below.
+[31m│[0m [0m
+[31m│[0m [0mThe Terraform configuration must be valid before initialization so that
+[31m│[0m [0mTerraform can determine which modules and providers need to be installed.[0m[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate variable declaration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 1:
+[31m│[0m [0m   1: [4mvariable "region"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA variable named "region" was already declared at outputs.tf:1,1-18. Variable
+[31m│[0m [0mnames must be unique within a module.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate variable declaration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 6:
+[31m│[0m [0m   6: [4mvariable "owner"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA variable named "owner" was already declared at outputs.tf:6,1-17. Variable
+[31m│[0m [0mnames must be unique within a module.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate variable declaration[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 11:
+[31m│[0m [0m  11: [4mvariable "owner_slug"[0m {[0m
+[31m│[0m [0m
+[31m│[0m [0mA variable named "owner_slug" was already declared at outputs.tf:11,1-22.
+[31m│[0m [0mVariable names must be unique within a module.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mInvalid multi-line string[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 13, in variable "owner_slug":
+[31m│[0m [0m  13:   default = "oanh[4m
+[31m│[0m [0m  14: [0m}[0m
+[31m│[0m [0m
+[31m│[0m [0mQuoted strings may not be split over multiple lines. To produce a multi-line
+[31m│[0m [0mstring, either use the \n escape to represent a newline character or use the
+[31m│[0m [0m"heredoc" multi-line template syntax.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnterminated template string[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 13, in variable "owner_slug":
+[31m│[0m [0m  13:   default = "oanh[4m
+[31m│[0m [0m  14: [0m}[0m
+[31m│[0m [0m
+[31m│[0m [0mNo closing marker was found for the string.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mInvalid multi-line string[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on variables.tf line 14, in variable "owner_slug":
+[31m│[0m [0m  14: }[4m[0m[0m
+[31m│[0m [0m
+[31m│[0m [0mQuoted strings may not be split over multiple lines. To produce a multi-line
+[31m│[0m [0mstring, either use the \n escape to represent a newline character or use the
+[31m│[0m [0m"heredoc" multi-line template syntax.
+[31m╵[0m[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mcat > variables.tf <<'EOF'[27m
+[7mvariable "region" {[27m
+[7m  type    = string[27m
+[7m  default = "ap-southeast-1"[27m
+[7m}[27m
+
+[7mvariable "owner" {[27m
+[7m  type    = string[27m
+[7m  default = "oanh"[27m
+[7m}[27m
+
+[7mvariable "owner_slug" {[27m
+[7m  type    = string[27m
+[7m  default = "oanh"[27m
+[7m}[27m
+[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pterraform init
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -R 'resource "aws_s3_bucket"' -n .[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25Pterraform initcat > variables.tf <<'EOF'
+variable "region" {
+  type    = string
+  default = "ap-southeast-1"
+}
+
+variable "owner" {
+  type    = string
+  default = "oanh"
+}
+
+variable "owner_slug" {
+  type    = string
+  default = "oanh"
+}
+EOF[A[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[A[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Choanh"aoanh"[C[C[C[C[C
+[C
+
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C
+[C[C[C
+[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mcat > outputs.tf <<'EOF'[27m
+[7moutput "bucket_name" {[27m
+[7m  value = aws_s3_bucket.tfstate.bucket[27m
+[7m}[27m
+
+[7moutput "dynamodb_table" {[27m
+[7m  value = aws_dynamodb_table.tf_lock.name[27m
+[7m}[27m
+[7mEOF[27m[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat > outputs.tf <<'EOF'
+output "bucket_name" {
+  value = aws_s3_bucket.tfstate.bucket
+}
+
+output "dynamodb_table" {
+  value = aws_dynamodb_table.tf_lock.name
+}
+EOF
+[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ tera[K[K[K[Kterraform fmt
+[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform validate
+[?2004l[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mMissing required provider[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mThis configuration requires provider registry.terraform.io/hashicorp/aws, but
+[31m│[0m [0mthat provider isn't available. You may be able to install it automatically by
+[31m│[0m [0mrunning:
+[31m│[0m [0m  terraform init
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mMissing required provider[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mThis configuration requires provider registry.terraform.io/hashicorp/random,
+[31m│[0m [0mbut that provider isn't available. You may be able to install it
+[31m│[0m [0mautomatically by running:
+[31m│[0m [0m  terraform init
+[31m╵[0m[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform init
+[?2004l[0m[1mInitializing provider plugins found in the configuration...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+- Installing hashicorp/random v3.9.0...
+- Installed hashicorp/random v3.9.0 (signed by HashiCorp)
+
+[0m[1mInitializing the backend...[0m
+
+
+Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.[0m
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform initvalidate
+[?2004l[32m[1mSuccess![0m The configuration is valid.
+[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform validate[4Pinitvalidate[5Pfmt
+[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mterraform apply -auto-approve[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cterraform apply -auto-approve
+[A
+[?2004l
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_dynamodb_table.tf_lock[0m will be created
+[0m  [32m+[0m[0m resource "aws_dynamodb_table" "tf_lock" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m billing_mode     = "PAY_PER_REQUEST"
+      [32m+[0m[0m hash_key         = "LockID"
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m name             = "tfstate-lock"
+      [32m+[0m[0m read_capacity    = (known after apply)
+      [32m+[0m[0m stream_arn       = (known after apply)
+      [32m+[0m[0m stream_label     = (known after apply)
+      [32m+[0m[0m stream_view_type = (known after apply)
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m write_capacity   = (known after apply)
+
+      [32m+[0m[0m attribute {
+          [32m+[0m[0m name = "LockID"
+          [32m+[0m[0m type = "S"
+        }
+
+      [32m+[0m[0m point_in_time_recovery (known after apply)
+
+      [32m+[0m[0m server_side_encryption (known after apply)
+
+      [32m+[0m[0m ttl (known after apply)
+    }
+
+[1m  # aws_s3_bucket.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket" "tfstate" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [32m+[0m[0m arn                         = (known after apply)
+      [32m+[0m[0m bucket                      = (known after apply)
+      [32m+[0m[0m bucket_domain_name          = (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [32m+[0m[0m bucket_regional_domain_name = (known after apply)
+      [32m+[0m[0m force_destroy               = true
+      [32m+[0m[0m hosted_zone_id              = (known after apply)
+      [32m+[0m[0m id                          = (known after apply)
+      [32m+[0m[0m object_lock_enabled         = (known after apply)
+      [32m+[0m[0m policy                      = (known after apply)
+      [32m+[0m[0m region                      = (known after apply)
+      [32m+[0m[0m request_payer               = (known after apply)
+      [32m+[0m[0m tags_all                    = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+
+      [32m+[0m[0m cors_rule (known after apply)
+
+      [32m+[0m[0m grant (known after apply)
+
+      [32m+[0m[0m lifecycle_rule (known after apply)
+
+      [32m+[0m[0m logging (known after apply)
+
+      [32m+[0m[0m object_lock_configuration (known after apply)
+
+      [32m+[0m[0m replication_configuration (known after apply)
+
+      [32m+[0m[0m server_side_encryption_configuration (known after apply)
+
+      [32m+[0m[0m versioning (known after apply)
+
+      [32m+[0m[0m website (known after apply)
+    }
+
+[1m  # aws_s3_bucket_public_access_block.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "tfstate" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # aws_s3_bucket_server_side_encryption_configuration.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m rule {
+          [32m+[0m[0m apply_server_side_encryption_by_default {
+              [32m+[0m[0m sse_algorithm     = "AES256"
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            }
+        }
+    }
+
+[1m  # aws_s3_bucket_versioning.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_versioning" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m versioning_configuration {
+          [32m+[0m[0m mfa_delete = (known after apply)
+          [32m+[0m[0m status     = "Enabled"
+        }
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m6 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  [32m+[0m[0m bucket_name    = (known after apply)
+  [32m+[0m[0m dynamodb_table = "tfstate-lock"
+[0m[1mrandom_id.suffix: Creating...[0m[0m
+[0m[1mrandom_id.suffix: Creation complete after 0s [id=o0_kng][0m
+[0m[1maws_dynamodb_table.tf_lock: Creating...[0m[0m
+[0m[1maws_s3_bucket.tfstate: Creating...[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mcreating S3 Bucket (tfstate-oanh-a34fe49e): operation error S3: CreateBucket, https response error StatusCode: 403, RequestID: RW6MVS303JCA2KRN, HostID: Rnlw/LqvBw6aTkhWSYs74T9tcdAfhO3bAxiTN0mN27/V1T+4VxeKT0ev/uidYVg+BTpgkxSYRAEen4G66MXB1uXUhwnF3p/g, api error AccessDenied: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: s3:CreateBucket on resource: "arn:aws:s3:::tfstate-oanh-a34fe49e" because no identity-based policy allows the s3:CreateBucket action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_s3_bucket.tfstate,
+[31m│[0m [0m  on main.tf line 31, in resource "aws_s3_bucket" "tfstate":
+[31m│[0m [0m  31: resource "aws_s3_bucket" "tfstate" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mcreating AWS DynamoDB Table (tfstate-lock): operation error DynamoDB: CreateTable, https response error StatusCode: 400, RequestID: 7LAER5MJAKREP3SJVIID5N3KOVVV4KQNSO5AEMVJF66Q9ASUAAJG, api error AccessDeniedException: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: dynamodb:CreateTable on resource: arn:aws:dynamodb:ap-southeast-1:862070281476:table/tfstate-lock because no identity-based policy allows the dynamodb:CreateTable action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_dynamodb_table.tf_lock,
+[31m│[0m [0m  on main.tf line 63, in resource "aws_dynamodb_table" "tf_lock":
+[31m│[0m [0m  63: resource "aws_dynamodb_table" "tf_lock" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mterraform state list[27mterraform state list
+[?2004lrandom_id.suffix
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mterraform plan[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cterraform plan
+[A
+[?2004l[0m[1mrandom_id.suffix: Refreshing state... [id=o0_kng][0m
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_dynamodb_table.tf_lock[0m will be created
+[0m  [32m+[0m[0m resource "aws_dynamodb_table" "tf_lock" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m billing_mode     = "PAY_PER_REQUEST"
+      [32m+[0m[0m hash_key         = "LockID"
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m name             = "tfstate-lock"
+      [32m+[0m[0m read_capacity    = (known after apply)
+      [32m+[0m[0m stream_arn       = (known after apply)
+      [32m+[0m[0m stream_label     = (known after apply)
+      [32m+[0m[0m stream_view_type = (known after apply)
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m write_capacity   = (known after apply)
+
+      [32m+[0m[0m attribute {
+          [32m+[0m[0m name = "LockID"
+          [32m+[0m[0m type = "S"
+        }
+
+      [32m+[0m[0m point_in_time_recovery (known after apply)
+
+      [32m+[0m[0m server_side_encryption (known after apply)
+
+      [32m+[0m[0m ttl (known after apply)
+    }
+
+[1m  # aws_s3_bucket.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket" "tfstate" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [32m+[0m[0m arn                         = (known after apply)
+      [32m+[0m[0m bucket                      = "tfstate-oanh-a34fe49e"
+      [32m+[0m[0m bucket_domain_name          = (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [32m+[0m[0m bucket_regional_domain_name = (known after apply)
+      [32m+[0m[0m force_destroy               = true
+      [32m+[0m[0m hosted_zone_id              = (known after apply)
+      [32m+[0m[0m id                          = (known after apply)
+      [32m+[0m[0m object_lock_enabled         = (known after apply)
+      [32m+[0m[0m policy                      = (known after apply)
+      [32m+[0m[0m region                      = (known after apply)
+      [32m+[0m[0m request_payer               = (known after apply)
+      [32m+[0m[0m tags_all                    = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+
+      [32m+[0m[0m cors_rule (known after apply)
+
+      [32m+[0m[0m grant (known after apply)
+
+      [32m+[0m[0m lifecycle_rule (known after apply)
+
+      [32m+[0m[0m logging (known after apply)
+
+      [32m+[0m[0m object_lock_configuration (known after apply)
+
+      [32m+[0m[0m replication_configuration (known after apply)
+
+      [32m+[0m[0m server_side_encryption_configuration (known after apply)
+
+      [32m+[0m[0m versioning (known after apply)
+
+      [32m+[0m[0m website (known after apply)
+    }
+
+[1m  # aws_s3_bucket_public_access_block.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "tfstate" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # aws_s3_bucket_server_side_encryption_configuration.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m rule {
+          [32m+[0m[0m apply_server_side_encryption_by_default {
+              [32m+[0m[0m sse_algorithm     = "AES256"
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            }
+        }
+    }
+
+[1m  # aws_s3_bucket_versioning.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_versioning" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m versioning_configuration {
+          [32m+[0m[0m mfa_delete = (known after apply)
+          [32m+[0m[0m status     = "Enabled"
+        }
+    }
+
+[1mPlan:[0m [0m5 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  [32m+[0m[0m bucket_name    = "tfstate-oanh-a34fe49e"
+[90m
+───────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7mterraform apply -auto-approve[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cterraform apply -auto-approve
+[A
+[?2004l[0m[1mrandom_id.suffix: Refreshing state... [id=o0_kng][0m
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_dynamodb_table.tf_lock[0m will be created
+[0m  [32m+[0m[0m resource "aws_dynamodb_table" "tf_lock" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m billing_mode     = "PAY_PER_REQUEST"
+      [32m+[0m[0m hash_key         = "LockID"
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m name             = "tfstate-lock"
+      [32m+[0m[0m read_capacity    = (known after apply)
+      [32m+[0m[0m stream_arn       = (known after apply)
+      [32m+[0m[0m stream_label     = (known after apply)
+      [32m+[0m[0m stream_view_type = (known after apply)
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m write_capacity   = (known after apply)
+
+      [32m+[0m[0m attribute {
+          [32m+[0m[0m name = "LockID"
+          [32m+[0m[0m type = "S"
+        }
+
+      [32m+[0m[0m point_in_time_recovery (known after apply)
+
+      [32m+[0m[0m server_side_encryption (known after apply)
+
+      [32m+[0m[0m ttl (known after apply)
+    }
+
+[1m  # aws_s3_bucket.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket" "tfstate" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [32m+[0m[0m arn                         = (known after apply)
+      [32m+[0m[0m bucket                      = "tfstate-oanh-a34fe49e"
+      [32m+[0m[0m bucket_domain_name          = (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [32m+[0m[0m bucket_regional_domain_name = (known after apply)
+      [32m+[0m[0m force_destroy               = true
+      [32m+[0m[0m hosted_zone_id              = (known after apply)
+      [32m+[0m[0m id                          = (known after apply)
+      [32m+[0m[0m object_lock_enabled         = (known after apply)
+      [32m+[0m[0m policy                      = (known after apply)
+      [32m+[0m[0m region                      = (known after apply)
+      [32m+[0m[0m request_payer               = (known after apply)
+      [32m+[0m[0m tags_all                    = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+
+      [32m+[0m[0m cors_rule (known after apply)
+
+      [32m+[0m[0m grant (known after apply)
+
+      [32m+[0m[0m lifecycle_rule (known after apply)
+
+      [32m+[0m[0m logging (known after apply)
+
+      [32m+[0m[0m object_lock_configuration (known after apply)
+
+      [32m+[0m[0m replication_configuration (known after apply)
+
+      [32m+[0m[0m server_side_encryption_configuration (known after apply)
+
+      [32m+[0m[0m versioning (known after apply)
+
+      [32m+[0m[0m website (known after apply)
+    }
+
+[1m  # aws_s3_bucket_public_access_block.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "tfstate" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # aws_s3_bucket_server_side_encryption_configuration.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m rule {
+          [32m+[0m[0m apply_server_side_encryption_by_default {
+              [32m+[0m[0m sse_algorithm     = "AES256"
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            }
+        }
+    }
+
+[1m  # aws_s3_bucket_versioning.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_versioning" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m versioning_configuration {
+          [32m+[0m[0m mfa_delete = (known after apply)
+          [32m+[0m[0m status     = "Enabled"
+        }
+    }
+
+[1mPlan:[0m [0m5 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  [32m+[0m[0m bucket_name    = "tfstate-oanh-a34fe49e"
+[0m[1maws_dynamodb_table.tf_lock: Creating...[0m[0m
+[0m[1maws_s3_bucket.tfstate: Creating...[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1msetting S3 Bucket (tfstate-oanh-a34fe49e) tags: listing resource tags (tfstate-oanh-a34fe49e): operation error S3: GetBucketTagging, https response error StatusCode: 403, RequestID: TXGPK0G4SZRMCHC2, HostID: YHoR4rOz3WfLDuLTX3MvuoCW/Ymf9K4+EeMeBllsXEljWilcDGqKrSGrtXOeqMnCaFAR4+XzSQ6BycgRTnf2ZccDqSC2VPWd, api error AccessDenied: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: s3:GetBucketTagging on resource: "arn:aws:s3:::tfstate-oanh-a34fe49e" because no identity-based policy allows the s3:GetBucketTagging action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_s3_bucket.tfstate,
+[31m│[0m [0m  on main.tf line 31, in resource "aws_s3_bucket" "tfstate":
+[31m│[0m [0m  31: resource "aws_s3_bucket" "tfstate" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mreading AWS DynamoDB Table (tfstate-lock): continuous backups: operation error DynamoDB: DescribeContinuousBackups, https response error StatusCode: 400, RequestID: SEID499J6P8DT42PPEHONP4LPJVV4KQNSO5AEMVJF66Q9ASUAAJG, api error AccessDeniedException: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: dynamodb:DescribeContinuousBackups on resource: arn:aws:dynamodb:ap-southeast-1:862070281476:table/tfstate-lock because no identity-based policy allows the dynamodb:DescribeContinuousBackups action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_dynamodb_table.tf_lock,
+[31m│[0m [0m  on main.tf line 63, in resource "aws_dynamodb_table" "tf_lock":
+[31m│[0m [0m  63: resource "aws_dynamodb_table" "tf_lock" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform apply -auto-approve
+[?2004l[0m[1mrandom_id.suffix: Refreshing state... [id=o0_kng][0m
+^C
+Interrupt received.
+Please wait for Terraform to exit or data loss may occur.
+Gracefully shutting down...
+
+[0m[1maws_dynamodb_table.tf_lock: Refreshing state... [id=tfstate-lock][0m
+[0m[1maws_s3_bucket.tfstate: Refreshing state... [id=tfstate-oanh-a34fe49e][0m
+
+[0m[1m[31mPlanning failed.[0m[1m Terraform encountered an error while generating this plan.[0m
+
+[0m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mreading S3 Bucket (tfstate-oanh-a34fe49e) policy: operation error S3: GetBucketPolicy, https response error StatusCode: 403, RequestID: 3TC30CATHKN8SJF4, HostID: KRrnBpLzefrxsHA0a6JvqmmZPcTvKIHVhEYbv86zgEINPo/Q7HFhdY7Vp3i6MzC17DuJ87GpyyhMV5ktUEMsBrPNPfEAOZhS, api error AccessDenied: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: s3:GetBucketPolicy on resource: "arn:aws:s3:::tfstate-oanh-a34fe49e" because no identity-based policy allows the s3:GetBucketPolicy action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_s3_bucket.tfstate,
+[31m│[0m [0m  on main.tf line 31, in resource "aws_s3_bucket" "tfstate":
+[31m│[0m [0m  31: resource "aws_s3_bucket" "tfstate" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mreading AWS DynamoDB Table (tfstate-lock): continuous backups: operation error DynamoDB: DescribeContinuousBackups, https response error StatusCode: 400, RequestID: JSIVFGBRHLQESLGTDDGSH5Q2OJVV4KQNSO5AEMVJF66Q9ASUAAJG, api error AccessDeniedException: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: dynamodb:DescribeContinuousBackups on resource: arn:aws:dynamodb:ap-southeast-1:862070281476:table/tfstate-lock because no identity-based policy allows the dynamodb:DescribeContinuousBackups action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_dynamodb_table.tf_lock,
+[31m│[0m [0m  on main.tf line 63, in resource "aws_dynamodb_table" "tf_lock":
+[31m│[0m [0m  63: resource "aws_dynamodb_table" "tf_lock" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform apply -auto-approveplan[Kstate list[K[K[K[K[K[K[K[K[K[Kplan
+[?2004l[0m[1mrandom_id.suffix: Refreshing state... [id=o0_kng][0m
+[0m[1maws_dynamodb_table.tf_lock: Refreshing state... [id=tfstate-lock][0m
+[0m[1maws_s3_bucket.tfstate: Refreshing state... [id=tfstate-oanh-a34fe49e][0m
+
+[0m[1m[31mPlanning failed.[0m[1m Terraform encountered an error while generating this plan.[0m
+
+[0m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mreading S3 Bucket (tfstate-oanh-a34fe49e) policy: operation error S3: GetBucketPolicy, https response error StatusCode: 403, RequestID: P1XBAR0ST2SY7HM5, HostID: Xz0Jvt0uwddwnZZWyDgyAksGdVYxYawwX3pE7enWUgxrYjGQ7Emnpp8ioES6KGhpWiwI2kcT7PE=, api error AccessDenied: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: s3:GetBucketPolicy on resource: "arn:aws:s3:::tfstate-oanh-a34fe49e" because no identity-based policy allows the s3:GetBucketPolicy action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_s3_bucket.tfstate,
+[31m│[0m [0m  on main.tf line 31, in resource "aws_s3_bucket" "tfstate":
+[31m│[0m [0m  31: resource "aws_s3_bucket" "tfstate" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mreading AWS DynamoDB Table (tfstate-lock): continuous backups: operation error DynamoDB: DescribeContinuousBackups, https response error StatusCode: 400, RequestID: 5SE3HT3M6FGE0IA9765EEIVV8BVV4KQNSO5AEMVJF66Q9ASUAAJG, api error AccessDeniedException: User: arn:aws:iam::862070281476:user/terraform-day-8 is not authorized to perform: dynamodb:DescribeContinuousBackups on resource: arn:aws:dynamodb:ap-southeast-1:862070281476:table/tfstate-lock because no identity-based policy allows the dynamodb:DescribeContinuousBackups action[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with aws_dynamodb_table.tf_lock,
+[31m│[0m [0m  on main.tf line 63, in resource "aws_dynamodb_table" "tf_lock":
+[31m│[0m [0m  63: resource "aws_dynamodb_table" "tf_lock" [4m{[0m[0m
+[31m│[0m [0m
+[31m╵[0m[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ [7maws sts get-caller-identity[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Caws sts get-caller-identity
+[A
+[?2004l[?1h={[m
+    "UserId": "AIDA4RN3ESUCPKOGTF67T",[m
+    "Account": "862070281476",[m
+    "Arn": "arn:aws:iam::862070281476:user/terraform-day-8"[m
+}[m
+[K[?1l>[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ aws sts get-caller-identity[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pterraform plan
+[?2004l[0m[1mrandom_id.suffix: Refreshing state... [id=o0_kng][0m
+[0m[1maws_s3_bucket.tfstate: Refreshing state... [id=tfstate-oanh-a34fe49e][0m
+[0m[1maws_dynamodb_table.tf_lock: Refreshing state... [id=tfstate-lock][0m
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+[31m-[0m/[32m+[0m destroy and then create replacement[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_dynamodb_table.tf_lock[0m is tainted, so must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_dynamodb_table" "tf_lock" {
+      [33m~[0m[0m arn                         = "arn:aws:dynamodb:ap-southeast-1:862070281476:table/tfstate-lock" -> (known after apply)
+      [31m-[0m[0m deletion_protection_enabled = false [90m-> null[0m[0m
+      [33m~[0m[0m id                          = "tfstate-lock" -> (known after apply)
+        name                        = "tfstate-lock"
+      [33m~[0m[0m read_capacity               = 0 -> (known after apply)
+      [32m+[0m[0m stream_arn                  = (known after apply)
+      [31m-[0m[0m stream_enabled              = false [90m-> null[0m[0m
+      [32m+[0m[0m stream_label                = (known after apply)
+      [32m+[0m[0m stream_view_type            = (known after apply)
+      [31m-[0m[0m table_class                 = "STANDARD" [90m-> null[0m[0m
+      [31m-[0m[0m tags                        = {} [90m-> null[0m[0m
+      [33m~[0m[0m write_capacity              = 0 -> (known after apply)
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m[0m point_in_time_recovery (known after apply)
+      [31m-[0m[0m point_in_time_recovery {
+          [31m-[0m[0m enabled                 = false [90m-> null[0m[0m
+          [31m-[0m[0m recovery_period_in_days = 0 [90m-> null[0m[0m
+        }
+
+      [33m~[0m[0m server_side_encryption (known after apply)
+
+      [33m~[0m[0m ttl (known after apply)
+      [31m-[0m[0m ttl {
+          [31m-[0m[0m enabled        = false [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # aws_s3_bucket.tfstate[0m is tainted, so must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_s3_bucket" "tfstate" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [33m~[0m[0m arn                         = "arn:aws:s3:::tfstate-oanh-a34fe49e" -> (known after apply)
+      [33m~[0m[0m bucket_domain_name          = "tfstate-oanh-a34fe49e.s3.amazonaws.com" -> (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [33m~[0m[0m bucket_regional_domain_name = "tfstate-oanh-a34fe49e.s3.ap-southeast-1.amazonaws.com" -> (known after apply)
+      [33m~[0m[0m hosted_zone_id              = "Z3O0J2DXBE1FTB" -> (known after apply)
+      [33m~[0m[0m id                          = "tfstate-oanh-a34fe49e" -> (known after apply)
+      [33m~[0m[0m object_lock_enabled         = false -> (known after apply)
+      [32m+[0m[0m policy                      = (known after apply)
+      [33m~[0m[0m region                      = "ap-southeast-1" -> (known after apply)
+      [33m~[0m[0m request_payer               = "BucketOwner" -> (known after apply)
+      [31m-[0m[0m tags                        = {} [90m-> null[0m[0m
+      [33m~[0m[0m tags_all                    = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m[0m cors_rule (known after apply)
+
+      [33m~[0m[0m grant (known after apply)
+      [31m-[0m[0m grant {
+          [31m-[0m[0m id          = "b2242c5e11f057cff3b311ca989f8ffd433d119d3ffd808cfc51125ebfa038b4" [90m-> null[0m[0m
+          [31m-[0m[0m permissions = [
+              [31m-[0m[0m "FULL_CONTROL",
+            ] [90m-> null[0m[0m
+          [31m-[0m[0m type        = "CanonicalUser" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [33m~[0m[0m lifecycle_rule (known after apply)
+
+      [33m~[0m[0m logging (known after apply)
+
+      [33m~[0m[0m object_lock_configuration (known after apply)
+
+      [33m~[0m[0m replication_configuration (known after apply)
+
+      [33m~[0m[0m server_side_encryption_configuration (known after apply)
+      [31m-[0m[0m server_side_encryption_configuration {
+          [31m-[0m[0m rule {
+              [31m-[0m[0m bucket_key_enabled = false [90m-> null[0m[0m
+
+              [31m-[0m[0m apply_server_side_encryption_by_default {
+                  [31m-[0m[0m sse_algorithm     = "AES256" [90m-> null[0m[0m
+                    [90m# (1 unchanged attribute hidden)[0m[0m
+                }
+            }
+        }
+
+      [33m~[0m[0m versioning (known after apply)
+      [31m-[0m[0m versioning {
+          [31m-[0m[0m enabled    = false [90m-> null[0m[0m
+          [31m-[0m[0m mfa_delete = false [90m-> null[0m[0m
+        }
+
+      [33m~[0m[0m website (known after apply)
+    }
+
+[1m  # aws_s3_bucket_public_access_block.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "tfstate" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # aws_s3_bucket_server_side_encryption_configuration.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m rule {
+          [32m+[0m[0m apply_server_side_encryption_by_default {
+              [32m+[0m[0m sse_algorithm     = "AES256"
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            }
+        }
+    }
+
+[1m  # aws_s3_bucket_versioning.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_versioning" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m versioning_configuration {
+          [32m+[0m[0m mfa_delete = (known after apply)
+          [32m+[0m[0m status     = "Enabled"
+        }
+    }
+
+[1mPlan:[0m [0m5 to add, 0 to change, 2 to destroy.
+[90m
+───────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform plan[K[K[K[Kf[Kvl[Kalidaft[K[Kte
+[?2004l[32m[1mSuccess![0m The configuration is valid.
+[0m
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform validate[K[K[K[K[K[K[K[Kfmt
+[?2004l[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform fmtvalidate[4Pplanaws sts get-caller-identity[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pterraform planapply -auto-approve
+[?2004l[0m[1mrandom_id.suffix: Refreshing state... [id=o0_kng][0m
+[0m[1maws_s3_bucket.tfstate: Refreshing state... [id=tfstate-oanh-a34fe49e][0m
+[0m[1maws_dynamodb_table.tf_lock: Refreshing state... [id=tfstate-lock][0m
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+[31m-[0m/[32m+[0m destroy and then create replacement[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_dynamodb_table.tf_lock[0m is tainted, so must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_dynamodb_table" "tf_lock" {
+      [33m~[0m[0m arn                         = "arn:aws:dynamodb:ap-southeast-1:862070281476:table/tfstate-lock" -> (known after apply)
+      [31m-[0m[0m deletion_protection_enabled = false [90m-> null[0m[0m
+      [33m~[0m[0m id                          = "tfstate-lock" -> (known after apply)
+        name                        = "tfstate-lock"
+      [33m~[0m[0m read_capacity               = 0 -> (known after apply)
+      [32m+[0m[0m stream_arn                  = (known after apply)
+      [31m-[0m[0m stream_enabled              = false [90m-> null[0m[0m
+      [32m+[0m[0m stream_label                = (known after apply)
+      [32m+[0m[0m stream_view_type            = (known after apply)
+      [31m-[0m[0m table_class                 = "STANDARD" [90m-> null[0m[0m
+      [31m-[0m[0m tags                        = {} [90m-> null[0m[0m
+      [33m~[0m[0m write_capacity              = 0 -> (known after apply)
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m[0m point_in_time_recovery (known after apply)
+      [31m-[0m[0m point_in_time_recovery {
+          [31m-[0m[0m enabled                 = false [90m-> null[0m[0m
+          [31m-[0m[0m recovery_period_in_days = 0 [90m-> null[0m[0m
+        }
+
+      [33m~[0m[0m server_side_encryption (known after apply)
+
+      [33m~[0m[0m ttl (known after apply)
+      [31m-[0m[0m ttl {
+          [31m-[0m[0m enabled        = false [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # aws_s3_bucket.tfstate[0m is tainted, so must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_s3_bucket" "tfstate" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [33m~[0m[0m arn                         = "arn:aws:s3:::tfstate-oanh-a34fe49e" -> (known after apply)
+      [33m~[0m[0m bucket_domain_name          = "tfstate-oanh-a34fe49e.s3.amazonaws.com" -> (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [33m~[0m[0m bucket_regional_domain_name = "tfstate-oanh-a34fe49e.s3.ap-southeast-1.amazonaws.com" -> (known after apply)
+      [33m~[0m[0m hosted_zone_id              = "Z3O0J2DXBE1FTB" -> (known after apply)
+      [33m~[0m[0m id                          = "tfstate-oanh-a34fe49e" -> (known after apply)
+      [33m~[0m[0m object_lock_enabled         = false -> (known after apply)
+      [32m+[0m[0m policy                      = (known after apply)
+      [33m~[0m[0m region                      = "ap-southeast-1" -> (known after apply)
+      [33m~[0m[0m request_payer               = "BucketOwner" -> (known after apply)
+      [31m-[0m[0m tags                        = {} [90m-> null[0m[0m
+      [33m~[0m[0m tags_all                    = {
+          [32m+[0m[0m "Owner"   = "haoanh"
+          [32m+[0m[0m "Project" = "devops-training"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m[0m cors_rule (known after apply)
+
+      [33m~[0m[0m grant (known after apply)
+      [31m-[0m[0m grant {
+          [31m-[0m[0m id          = "b2242c5e11f057cff3b311ca989f8ffd433d119d3ffd808cfc51125ebfa038b4" [90m-> null[0m[0m
+          [31m-[0m[0m permissions = [
+              [31m-[0m[0m "FULL_CONTROL",
+            ] [90m-> null[0m[0m
+          [31m-[0m[0m type        = "CanonicalUser" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [33m~[0m[0m lifecycle_rule (known after apply)
+
+      [33m~[0m[0m logging (known after apply)
+
+      [33m~[0m[0m object_lock_configuration (known after apply)
+
+      [33m~[0m[0m replication_configuration (known after apply)
+
+      [33m~[0m[0m server_side_encryption_configuration (known after apply)
+      [31m-[0m[0m server_side_encryption_configuration {
+          [31m-[0m[0m rule {
+              [31m-[0m[0m bucket_key_enabled = false [90m-> null[0m[0m
+
+              [31m-[0m[0m apply_server_side_encryption_by_default {
+                  [31m-[0m[0m sse_algorithm     = "AES256" [90m-> null[0m[0m
+                    [90m# (1 unchanged attribute hidden)[0m[0m
+                }
+            }
+        }
+
+      [33m~[0m[0m versioning (known after apply)
+      [31m-[0m[0m versioning {
+          [31m-[0m[0m enabled    = false [90m-> null[0m[0m
+          [31m-[0m[0m mfa_delete = false [90m-> null[0m[0m
+        }
+
+      [33m~[0m[0m website (known after apply)
+    }
+
+[1m  # aws_s3_bucket_public_access_block.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "tfstate" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # aws_s3_bucket_server_side_encryption_configuration.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m rule {
+          [32m+[0m[0m apply_server_side_encryption_by_default {
+              [32m+[0m[0m sse_algorithm     = "AES256"
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            }
+        }
+    }
+
+[1m  # aws_s3_bucket_versioning.tfstate[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_versioning" "tfstate" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m versioning_configuration {
+          [32m+[0m[0m mfa_delete = (known after apply)
+          [32m+[0m[0m status     = "Enabled"
+        }
+    }
+
+[1mPlan:[0m [0m5 to add, 0 to change, 2 to destroy.
+[0m[1maws_dynamodb_table.tf_lock: Destroying... [id=tfstate-lock][0m[0m
+[0m[1maws_s3_bucket.tfstate: Destroying... [id=tfstate-oanh-a34fe49e][0m[0m
+[0m[1maws_s3_bucket.tfstate: Destruction complete after 1s[0m
+[0m[1maws_s3_bucket.tfstate: Creating...[0m[0m
+[0m[1maws_s3_bucket.tfstate: Creation complete after 3s [id=tfstate-oanh-a34fe49e][0m
+[0m[1maws_s3_bucket_public_access_block.tfstate: Creating...[0m[0m
+[0m[1maws_s3_bucket_versioning.tfstate: Creating...[0m[0m
+[0m[1maws_s3_bucket_server_side_encryption_configuration.tfstate: Creating...[0m[0m
+[0m[1maws_s3_bucket_public_access_block.tfstate: Creation complete after 0s [id=tfstate-oanh-a34fe49e][0m
+[0m[1maws_s3_bucket_server_side_encryption_configuration.tfstate: Creation complete after 0s [id=tfstate-oanh-a34fe49e][0m
+[0m[1maws_s3_bucket_versioning.tfstate: Creation complete after 1s [id=tfstate-oanh-a34fe49e][0m
+[0m[1maws_dynamodb_table.tf_lock: Destruction complete after 7s[0m
+[0m[1maws_dynamodb_table.tf_lock: Creating...[0m[0m
+[0m[1maws_dynamodb_table.tf_lock: Creation complete after 8s [id=tfstate-lock][0m
+[0m[1m[32m
+Apply complete! Resources: 5 added, 0 changed, 2 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+[0mbucket_name = "tfstate-oanh-a34fe49e"
+dynamodb_table = "tfstate-lock"
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ terraform apply -auto-approvefmt[K[K[K[Koutput
+[?2004lbucket_name = "tfstate-oanh-a34fe49e"
+dynamodb_table = "tfstate-lock"
+[?2004h]0;oanh@oanh-virtual-machine: ~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[01;32moanh@oanh-virtual-machine[00m:[01;34m~/Devops-intern-Ha-Thi-Kim-Oanh/phase-1/week-2/day-8-terraform/0-backend[00m$ exit
+[?2004lexit
+
+Script done on 2026-07-06 16:38:24+07:00 [COMMAND_EXIT_CODE="0"]
