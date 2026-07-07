@@ -1,0 +1,21 @@
+
+# Day 9 / AWS secrets
+.venv/
+__pycache__/
+*.pem
+*.key
+.env
+*.tfstate
+*.tfstate.*
+*access-key*
+*.log.secret
+
+# Python / AWS lab
+.venv/
+__pycache__/
+*.tfstate
+*.tfstate.*
+*.pem
+*.key
+.env
+*access-key*
