@@ -19,3 +19,14 @@ __pycache__/
 *.key
 .env
 *access-key*
+
+# AWS / Python lab
+.venv/
+__pycache__/
+*.tfstate
+*.tfstate.*
+*.pem
+*.key
+.env
+*access-key*
+*.bak.local
