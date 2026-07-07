@@ -1,0 +1,1 @@
+try upload with readonly user
