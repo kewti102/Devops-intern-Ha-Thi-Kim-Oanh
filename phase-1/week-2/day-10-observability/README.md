@@ -3,8 +3,8 @@
 - **Intern**: `Hà Thị Kim Oanh`
 - **Phase / Week / Day**: `Phase 1 / Week 2 / Day 10`
 - **Branch**: `phase-1/week-2/day-10-observability`
-- **Submitted at**: `<YYYY-MM-DD HH:MM> +07`
-- **Time spent**: `<số giờ>`
+- **Submitted at**: `2026-07-08 +07`
+- **Time spent**: `8h`
 
 ## 1. Mục tiêu
 
