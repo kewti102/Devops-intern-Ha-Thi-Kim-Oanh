@@ -19,3 +19,11 @@ __pycache__/
 *.key
 .env
 *access-key*
+
+# Kubernetes local files
+.kube/
+kubeconfig*
+*.pem
+*.key
+.env
+*.log
