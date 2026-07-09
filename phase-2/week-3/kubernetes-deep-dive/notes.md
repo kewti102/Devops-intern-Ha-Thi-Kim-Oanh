@@ -1,4 +1,3 @@
-cat > notes.md <<'EOF'
 # Week 3 — Kubernetes Deep Dive Notes
 
 ## Day 1 — Kubernetes Architecture
@@ -37,4 +36,3 @@ Pod là đơn vị nhỏ nhất có thể deploy trong Kubernetes. Một Pod có
 ### Service
 
 Service tạo endpoint ổn định để truy cập Pod. Pod có thể bị xoá/tạo lại, IP Pod thay đổi, nhưng Service giúp client truy cập ổn định.
-EOF
