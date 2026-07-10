@@ -3,7 +3,7 @@
 - **Intern**: `Hà Thị Kim Oanh`
 - **Phase / Week / Day**: `Phase 2 / Week 3 / Day 1–3`
 - **Branch**: `phase-2/week-3/kubernetes-deep-dive`
-- **Submitted at**: `2026-07-09 10:00 +07`
+- **Submitted at**: `2026-07-10 09:00 +07`
 - **Time spent**: `6 giờ`
 
 ## 1. Mục tiêu
