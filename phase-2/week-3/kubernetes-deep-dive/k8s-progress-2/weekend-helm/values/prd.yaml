@@ -1,0 +1,19 @@
+replicaCount: 3
+
+image:
+  repository: nginx
+  tag: "1.26"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: prd.demo.local
+      paths:
+        - path: /
+          pathType: Prefix

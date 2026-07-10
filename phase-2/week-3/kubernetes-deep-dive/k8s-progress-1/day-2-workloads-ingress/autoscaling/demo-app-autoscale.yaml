@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app-autoscale
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app-autoscale
+  template:
+    metadata:
+      labels:
+        app: demo-app-autoscale
+    spec:
+      containers:
+        - name: php-apache
+          image: registry.k8s.io/hpa-example
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-autoscale
+  namespace: demo
+spec:
+  type: ClusterIP
+  selector:
+    app: demo-app-autoscale
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
